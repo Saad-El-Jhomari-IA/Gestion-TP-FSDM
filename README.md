@@ -1,74 +1,74 @@
-# 🎓 Gestion des Travaux Pratiques (PFE - FSDM)
+# 🎓 Gestion Automatisée des Travaux Pratiques (PFE)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![PHP](https://img.shields.io/badge/PHP-Native-purple)
-![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-violet)
+![PHP](https://img.shields.io/badge/PHP-Native-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-## 📄 Description
+## 📖 Description du Projet
 
-Ce projet est une application web de **Gestion des Travaux Pratiques (TPs)** développée dans le cadre de mon Projet de Fin d'Études (Licence) à la FSDM (Faculté des Sciences Dhar El Mahraz).
+Ce projet a été réalisé dans le cadre de mon Projet de Fin d'Études (Licence).
 
-L'objectif principal est de dématérialiser la gestion des TPs informatique pour résoudre les problèmes de planification manuelle, faciliter la réservation des salles et centraliser l'échange de documents entre enseignants et étudiants.
+**But de création :**
+Pour tenter de résoudre les problèmes récurrents posés par la gestion des TP et vu que le besoin apparaît au service informatique et le manque d’informatisation au service de la gestion manuelle des TPs informatique, nous avons développé un site web dynamique qui permet de gérer ces problèmes automatiquement.
 
-## ✨ Fonctionnalités Principales
+L'application centralise la gestion des salles, des groupes d'étudiants et des ressources pédagogiques au sein de la faculté (FSDM).
 
-L'application est divisée en trois espaces sécurisés :
+## ✨ Fonctionnalités
 
-### 👨‍💼 Espace Administration
-
-- **Authentification sécurisée** pour les administrateurs.
-- **Gestion des utilisateurs :** Ajout, modification et suppression des comptes Enseignants et Étudiants.
-- **Gestion des Salles :** Ajout et suppression des salles de TP, consultation de la capacité des salles.
-- **Supervision :** Vue globale sur le système.
+L'application est divisée en trois espaces sécurisés, offrant des fonctionnalités spécifiques à chaque acteur :
 
 ### 👨‍🏫 Espace Enseignant
 
-- **Gestion des cours :** Dépôt de fichiers (TPs, cours) pour les étudiants.
-- **Réservation de salles :** Système de réservation avec gestion des créneaux horaires (Lundi à Samedi).
-- **Évaluation :** Attribution et modification des notes des étudiants.
-- **Gestion de profil :** Modification des informations personnelles et des modules enseignés.
+- **Communication :** Facilite les échanges entre l'enseignant et ses groupes d'étudiants.
+- **Gestion des Ressources :** Déposer les supports de TPs et cours.
+- **Réservation de Salles :** Effectuer et annuler des réservations de salles de TP informatique en temps réel.
+- **Suivi Pédagogique :** Attribuer les notes des colles/TPs et gérer la présence.
+- **Profil :** Gestion et modification des informations personnelles.
 
 ### 👨‍🎓 Espace Étudiant
 
-- **Accès aux ressources :** Téléchargement des fichiers déposés par les professeurs.
-- **Dépôt des travaux :** Envoi des comptes rendus et réponses aux TPs.
-- **Consultation :** Affichage des notes et des groupes de TP.
-- **Inscription :** Possibilité de créer un compte via le formulaire d'inscription.
+- **Suivi :** Consultation de la répartition des groupes et des emplois du temps.
+- **Travail Collaboratif :** Envoi des rapports de TP et communication avec les enseignants.
+- **Résultats :** Réception et consultation des notes attribuées.
 
-## 🛠️ Technologies Utilisées
+### 🛠️ Espace Administrateur
 
-- **Backend :** PHP (Natif, sans framework)
-- **Base de données :** MySQL
-- **Frontend :** HTML5, CSS3, Bootstrap 5.3
-- **Serveur local :** XAMPP / WAMP (Apache)
+- **Gestion Utilisateurs :** Ajouter, modifier ou supprimer des comptes (Enseignants et Étudiants).
+- **Gestion des Salles :** Manipuler les salles (ajout/suppression) et consulter le planning global des réservations.
+- **Traitement :** Valider ou refuser les demandes d'inscription et autres requêtes administratives.
 
-## 🚀 Installation et Configuration
+## 💻 Technologies Utilisées
 
-Suivez ces étapes pour lancer le projet sur votre machine locale :
+- **Langage Backend :** PHP (Natif, sans framework)
+- **Base de Données :** MySQL (PDO)
+- **Frontend :** HTML5, CSS3, Bootstrap 5.3 (pour le design responsive)
+- **Serveur Local :** XAMPP / WAMP
 
-1.  **Cloner le projet** ou télécharger les fichiers.
+## ⚙️ Installation et Configuration
+
+Pour tester ce projet sur votre machine locale :
+
+1.  **Cloner le dépôt :**
+    ````bash
+    git clone [ https://github.com/Saad-El-Jhomari-IA/Gestion-TP-FSDM.git]
+        ```
+    ````
 2.  **Base de données :**
-    - Ouvrez phpMyAdmin.
-    - Créez une base de données nommée `tp`.
-    - Importez le fichier `tp (2).sql` situé dans le dossier du projet.
+    - Importez le fichier `database/structure_base_donnees.sql` dans votre gestionnaire (phpMyAdmin).
+    - Nommez la base de données `tp` (ou adaptez le fichier `function.php`).
 3.  **Configuration :**
-    - Le projet est configuré pour se connecter en `root` sans mot de passe.
-    - Si vous avez un mot de passe MySQL, modifiez le fichier `function.php` et les fichiers de connexion (ex: `Administration.php`) à la ligne :
+    - Vérifiez les paramètres de connexion dans le fichier `function.php`. Par défaut :
       ```php
-      $cn = new PDO("mysql:host=localhost;dbname=tp;...", 'root', 'VOTRE_MOT_DE_PASSE');
+      $cn = new PDO("mysql:host=localhost;dbname=tp...", 'root', '');
       ```
 4.  **Lancement :**
-    - Placez le dossier du projet dans le répertoire `htdocs` (XAMPP) ou `www` (WAMP).
-    - Accédez à `http://localhost/NomDeVotreDossier/acceuil.php`.
+    - Placez le dossier dans le répertoire de votre serveur (`htdocs` ou `www`).
+    - Accédez à `http://localhost/NomDuProjet/index.php`.
 
 ## 👤 Auteur
 
-**[VOTRE NOM COMPLET]**
+**SAAD EL JHOMARI**
 
-- **Formation :** Licence en Informatique - FSDM
-- **Année :** [2023-2024]
+- **Formation :** Licence SMI, FSDM ,2023
 
 ---
-
-_Projet réalisé à des fins académiques._
