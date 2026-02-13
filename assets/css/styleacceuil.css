@@ -1,0 +1,22 @@
+.img4{
+    width:100%;
+    height: 75px;
+}
+.navbar{
+    width:100%;
+
+    height: 75px;
+    background-color: rgb(27, 110, 174);
+}
+.img rounded-circle{
+    width:100%;
+    height: 70px;
+    border: 2px solid aqua;
+}
+.div1{
+    margin-left: 20px;
+  
+}
+.lien:hover{
+    color:red;
+}
